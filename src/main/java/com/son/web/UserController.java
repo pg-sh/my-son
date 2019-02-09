@@ -27,7 +27,7 @@ public class UserController {
 	@PostMapping("")
 	public String create(User user) {
 		userRepository.save(user);
-		return "redirect:users";
+		return "redirect:/users";
 	}
 	
 	@GetMapping("")
@@ -48,6 +48,6 @@ public class UserController {
 		User user = userRepository.findById(id).get();
 		user.update(newUser);
 		userRepository.save(user);
-		return "redirect:users";
+		return "redirect:/users";
 	}
 }
