@@ -15,6 +15,10 @@ public class User {
 	private String userId;
 	
 	private String password;
+	public String getPassword() {
+		return password;
+	}
+
 	private String name;
 	private String email;
 
