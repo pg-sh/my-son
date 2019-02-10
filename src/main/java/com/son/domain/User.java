@@ -10,28 +10,27 @@ public class User {
 	@Id
 	@GeneratedValue
 	private Long id;
-	
-	public Long getId() {
-		return id;
-	}
 
-	@Column(nullable=false, length=20, unique=true)
+	@Column(nullable = false, length = 20, unique = true)
 	private String userId;
 	
 	private String password;
-	public String getPassword() {
-		return password;
-	}
-
 	private String name;
 	private String email;
+
+	public boolean matchId(Long newId) {
+		return newId.equals(id);
+	}
 
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-
 	public String getUserId() {
 		return userId;
+	}
+	
+	public boolean matchPassword(String newPassword) {
+		return newPassword.equals(password);
 	}
 
 	public void setPassword(String password) {
@@ -51,7 +50,7 @@ public class User {
 		this.name = newUser.name;
 		this.email = newUser.email;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", password=" + password + ", name=" + name + ", email=" + email + "]";
