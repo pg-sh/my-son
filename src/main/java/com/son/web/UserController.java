@@ -91,7 +91,7 @@ public class UserController {
 		
 		System.out.println("Login Success");
 		session.setAttribute(HttpSessionUtils.USER_SESSION_KEY, user);
-		return "redirect:/users";
+		return "redirect:/";
 	}
 	
 	@GetMapping("/logout")
