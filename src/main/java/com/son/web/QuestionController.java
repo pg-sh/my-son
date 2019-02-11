@@ -22,7 +22,7 @@ public class QuestionController {
 	@GetMapping("form")
 	public String form(HttpSession session) {
 		if(!HttpSessionUtils.isLoginUser(session)) {
-			return "/users/loginForm";
+			return "users/loginForm";
 		}
 		return "qna/form";
 	}
@@ -30,7 +30,7 @@ public class QuestionController {
 	@PostMapping("")
 	public String create(String title, String contents, HttpSession session) {
 		if(!HttpSessionUtils.isLoginUser(session)) {
-			return "/users/loginForm";
+			return "users/loginForm";
 		}
 		
 		User sessionUser = HttpSessionUtils.getUserFromSession(session);
